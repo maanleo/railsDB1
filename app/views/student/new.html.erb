@@ -1,0 +1,22 @@
+<div class="container">
+<h1>Enroll new Student</h1>
+<%=form_with model:@student,url:'/student/add' do |form|%>
+<%if @student.errors.any?%>
+<%@student.errors.each do |error|%>
+<p><%=error.full_message%></p>
+<%end%><%end%>
+<div style="margin:5px;width:100px">
+<%=form.label :firstname,"First Name" %>
+<%=form.text_field :firstname%>
+</div>
+<div style="margin:5px;width:100px">
+<%=form.label :lastname,"Last Name" %>
+<%=form.text_field :lastname%>
+</div>
+<div style="margin:5px;width:100px">
+<%=form.label :dob,"Date of Birth" %>
+<%=form.date_field :dob%>
+</div>
+<%=form.submit%>
+<%end%>
+</div>
